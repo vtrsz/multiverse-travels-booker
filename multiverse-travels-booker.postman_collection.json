@@ -1,0 +1,354 @@
+{
+	"info": {
+		"_postman_id": "0c161f30-c027-4248-8d55-f99e1e0815a4",
+		"name": "Multiverse Travels Booker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22349094"
+	},
+	"item": [
+		{
+			"name": "Create travel_plans",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"travel_stops\": [2, 7, 19, 9, 11]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/travel_plans?expand=true",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"travel_plans"
+					],
+					"query": [
+						{
+							"key": "expand",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Append travel_plans/id/append",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"travel_stops\": [\r\n        3,\r\n        4,\r\n        5\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/travel_plans/2/append",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"travel_plans",
+						"2",
+						"append"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ALL travel_plans",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/travel_plans",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"travel_plans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "travel_plans expanded",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/travel_plans?expand=true",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"travel_plans"
+					],
+					"query": [
+						{
+							"key": "expand",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "travel_plans optimized",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/travel_plans?optimize=true",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"travel_plans"
+					],
+					"query": [
+						{
+							"key": "optimize",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "travel_plans optimized and expanded",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/travel_plans?optimize=true&expand=true",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"travel_plans"
+					],
+					"query": [
+						{
+							"key": "optimize",
+							"value": "true"
+						},
+						{
+							"key": "expand",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "travel_plans/id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/travel_plans/1",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"travel_plans",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "travel_plans/id optimized",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/travel_plans/1?optimize=true",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"travel_plans",
+						"1"
+					],
+					"query": [
+						{
+							"key": "optimize",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "travel_plans/id expanded",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/travel_plans/1?expand=true",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"travel_plans",
+						"1"
+					],
+					"query": [
+						{
+							"key": "expand",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "travel_plans/id optimized and expanded",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/travel_plans/1?optimize=true&expand=true",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"travel_plans",
+						"1"
+					],
+					"query": [
+						{
+							"key": "optimize",
+							"value": "true"
+						},
+						{
+							"key": "expand",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "travel_plans",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"travel_stops\": [\r\n        19,\r\n        9,\r\n        2,\r\n        11,\r\n        7\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/travel_plans/1",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"travel_plans",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "travel_plans/id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/travel_plans/1",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"travel_plans",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "location/id/image",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/location/1/image",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"location",
+						"1",
+						"image"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}

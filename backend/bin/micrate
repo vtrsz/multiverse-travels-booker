@@ -1,0 +1,17 @@
+#! /usr/bin/env crystal
+#
+# To build a standalone command line client, require the
+# driver you wish to use and use `Micrate::Cli`.
+#
+
+require "micrate"
+require "pg"
+
+require "dotenv"
+Dotenv.load("../.env")
+
+# Configure the database connection
+Micrate::DB.connection_url = "postgres://#{ENV["DB_USER"]}:#{ENV["DB_PASSWORD"]}@#{ENV["DB_HOST"]}:#{ENV["DB_PORT"]}/#{ENV["DB_NAME"]}?currentSchema=public"
+
+# Run the migrations
+Micrate::Cli.run

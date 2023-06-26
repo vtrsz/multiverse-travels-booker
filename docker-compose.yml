@@ -1,0 +1,43 @@
+version: "3"
+services:
+  backend:
+    env_file:
+      - .env
+    build:
+      context: ./backend
+      args:
+        - CRYSTAL_IMAGE_VERSION=${CRYSTAL_VERSION}
+      dockerfile: Dockerfile
+    ports:
+      - ${BACKEND_PORT}:${BACKEND_PORT}
+    expose:
+      - ${BACKEND_PORT}
+    depends_on:
+      - db
+    #command: bash -c './bin/micrate up && ./server'
+    command: bash -c 'if [[ "$RUN_TEST_BEFORE_APPLICATION" == "true" ]];
+                      then
+                        echo "Running tests...";
+                        crystal spec;
+                      else
+                        echo "Skipping tests...";
+                      fi && ./bin/micrate up && ./server'
+
+  db:
+    build:
+      context: ./database
+      args:
+        - POSTGRES_USER=${DB_USER}
+        - POSTGRES_PASSWORD=${DB_PASSWORD}
+        - POSTGRES_DB=${DB_NAME}
+        - POSTGRES_DB_TEST=${DB_NAME}-test
+      dockerfile: Dockerfile
+    ports:
+      - ${DB_PORT}:${DB_PORT}
+    expose:
+      - ${DB_PORT}
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_DB_TEST=${DB_NAME}-test

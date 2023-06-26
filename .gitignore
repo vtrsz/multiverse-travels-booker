@@ -1,0 +1,7 @@
+/backend/lib/
+/backend/.shards/
+/backend/*.dwarf
+
+# Libraries don't need dependency lock
+# Dependencies will be locked in applications that use them
+/backend/shard.lock

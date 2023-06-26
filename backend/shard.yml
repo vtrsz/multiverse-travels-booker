@@ -1,0 +1,45 @@
+name: multiverse-travels-book
+version: 0.1.0
+
+targets:
+  multiverse-travels-book:
+    main: src/server.cr
+
+authors:
+  - Vitor Souza <vitorsouzaribeiro1@gmail.com>
+
+env:
+  CRYSTAL_VERSION: <%= ENV["CRYSTAL_VERSION"] || "1.8.2" %>
+
+crystal: <%= @env["CRYSTAL_VERSION"] %>
+
+license: MIT
+
+dependencies:
+  athena:
+    github: athena-framework/framework
+    version: 0.18.1
+  athena-spec:
+    github: athena-framework/spec
+    version: 0.3.5
+  graphql:
+    github: graphql-crystal/graphql
+    version: 0.4.0
+  granite:
+    github: amberframework/granite
+    version: 0.23.1
+  micrate:
+    github: juanedi/micrate
+    version: 0.12.0
+  db:
+    github: crystal-lang/crystal-db
+    version: 0.10.1
+  pg:
+    github: will/crystal-pg
+    version: 0.25.0
+  dotenv:
+    github: drum445/dotenv
+    version: 0.5.0
+  lexbor:
+    github: kostya/lexbor
+    version: 3.1.2
